@@ -1,11 +1,6 @@
-export interface UnsplashImage {
-    id: string;
-    description: string | null;
-    urls: {
-      regular: string;
-    };
-    user: {
-      username: string;
-      name: string;
-    };
+export interface UnsplashImage<A> {
+  results: A[];
+  total: number;
+  total_pages: number;
+
   }
