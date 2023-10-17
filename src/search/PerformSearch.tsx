@@ -4,7 +4,7 @@ import {BASE_URL} from "../constants/Constants";
 import { UNSPLASH_ACCESS_KEY } from "../api/key";
 import { getErrorMessage } from "../errors/Error";
 
-export async function searchImages(query: string, page: number = 1, perPage: number = 10): Promise<UnsplashImage[]> {
+export async function searchImages(query: string, page: number = 1, perPage: number = 10) {
     try {
       const response = await axios.get(`${BASE_URL}/search/photos`, {
         params: {
@@ -18,7 +18,7 @@ export async function searchImages(query: string, page: number = 1, perPage: num
       });
   
       if (response.status === 200) {
-        return response.data.results;
+        return response.data;
       } else {
         throw new Error(`Unsplash API request failed with status code ${response.status}`);
       }
