@@ -4,7 +4,7 @@ import {BASE_URL} from "../constants/Constants";
 import { UNSPLASH_ACCESS_KEY } from "../api/key";
 import { getErrorMessage } from "../errors/Error";
 
-export async function searchImages(query: string, page: number = 1, perPage: number = 10) {
+export async function searchImages(query: string, page: number = 1, perPage: number = 5) {
     try {
       const response = await axios.get(`${BASE_URL}/search/photos`, {
         params: {
