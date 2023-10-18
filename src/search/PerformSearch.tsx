@@ -1,11 +1,10 @@
 import { UnsplashImage } from "../interfaces/Unsplash";
 import axios from 'axios';
 import {BASE_URL} from "../constants/Constants";
-import { UNSPLASH_ACCESS_KEY } from "../api/key";
 import { getErrorMessage } from "../errors/Error";
 
 export async function searchImages(query: string, page: number = 1, perPage: number = 5) {
-    try {
+  try {
       const response = await axios.get(`${BASE_URL}/search/photos`, {
         params: {
           query,
@@ -13,7 +12,7 @@ export async function searchImages(query: string, page: number = 1, perPage: num
           per_page: perPage,
         },
         headers: {
-          Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`,
+          Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`,
         },
       });
   
