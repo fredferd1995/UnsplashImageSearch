@@ -24,3 +24,4 @@ yarn-error.log*
 
 # API key
 src/api/key.tsx
+.env
